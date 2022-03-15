@@ -23,11 +23,13 @@ export default function App() {
   }, []);
 
   const generateMatrix = () => {
-    JSON.stringify(matrix)
-      .replaceAll("[", "{")
-      .replaceAll("]", "}")
-      .replaceAll('"1"', 1)
-      .replaceAll('"0"', 0);
+    console.log(
+      JSON.stringify(matrix)
+        .replaceAll("[", "{")
+        .replaceAll("]", "}")
+        .replaceAll('"1"', 1)
+        .replaceAll('"0"', 0)
+    );
   };
 
   const handleClick = useCallback(
@@ -66,7 +68,7 @@ export default function App() {
   return (
     <div className="App">
       {grid.map((tile) => tile)}
-      <button onClick={generateMatrix} title="Generate Matrix" />
+      <button onClick={generateMatrix}>Generate Matrix</button>
     </div>
   );
 }
